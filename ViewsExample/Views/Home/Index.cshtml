@@ -4,6 +4,7 @@
 
            
 }
+@model List<Person>;
 
 
 <!DOCTYPE html>
@@ -22,10 +23,10 @@
         
     </h1>
     @* @Html.Raw(alertMessage); *@
-    @{
-       // List<Person> people = (List<Person>?)ViewData["people"];
-    }
-    @foreach (Person person in ViewBag.people)
+        @{
+            // List<Person> people = (List<Person>?)ViewData["people"];
+        }
+        @foreach (Person person in Model)
     {
         <div class="box float-left w-50">
 

@@ -10,7 +10,7 @@ namespace ViewsExample.Controllers
         [Route("/")]
         public IActionResult Index()
         {
-            ViewData["people"] = new List<Person>
+            List<Person> person = new List<Person>
 {
         new Person
     {
@@ -33,7 +33,7 @@ namespace ViewsExample.Controllers
 
     };
 
-            return View();
+            return View(person);
         }
     }
 }
