@@ -21,7 +21,7 @@ namespace ViewsExample.Controllers
     new Person
     {
         Name = "Seema",
-        DateOfBirth = DateTime.Parse("1999-05-10"),
+        DateOfBirth = null, //DateTime.Parse("1999-05-10"),
         PersonGender = Gender.Female
     },
     new Person

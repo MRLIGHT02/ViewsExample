@@ -15,25 +15,44 @@
     <link href="~/StyleSheet.css" rel="stylesheet" />
 </head>
 <body>
-    <h1>
+ <div class="page-content">
+
+        <h1>
         Welcome to My Page
         
     </h1>
     @* @Html.Raw(alertMessage); *@
     @{
-        List<Person> people = (List<Person>?)ViewData["people"];
+       // List<Person> people = (List<Person>?)ViewData["people"];
     }
-    @foreach (var person in people)
+    @foreach (Person person in ViewBag.people)
     {
-        <h1>Name: @person.Name</h1>
-        if (person.DateOfBirth.HasValue)
-        {
+        <div class="box float-left w-50">
+
+                <h3>@person.Name</h3>
             
-        <h1>Date Of Birth:  @person.DateOfBirth.Value.ToString("dd/MM/yyyy")</h1>
-    
-        }
-        <h1>Gender: @person.PersonGender</h1>
+                <table class="table w-100">
+
+                    <tbody>
+
+    <tr>
+        <td>Gender</td>
+        <td>@person.PersonGender</td>
+    </tr>
+    <tr>
+        @if(person.DateOfBirth.HasValue){
+                                
+               <td>Date of Birth</td>
+
+        <td>@person.DateOfBirth.Value.ToString("dd/MM/yyy")</td>
+                            }
+    </tr>
+                    </tbody>
+</table>
+        </div>
     }
+
+ </div>
 
 </body>
 </html>
