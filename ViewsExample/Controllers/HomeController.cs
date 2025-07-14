@@ -79,7 +79,25 @@ namespace ViewsExample.Controllers
         [Route("/Person-with-product")]
         public IActionResult PersonWithProduct()
         {
-            return View();
+            Person person = new Person
+            {
+                Name = "Raju",
+                DateOfBirth = Convert.ToDateTime("2000-12-20"),
+                PersonGender = Gender.Male
+            };
+            Product product = new Product
+            {
+                ProductId = 1,
+                ProductName = "Laptop"
+            };
+
+            PersonAndProductWrapperModel personAndProductWrapperModel = new PersonAndProductWrapperModel
+            {
+                PersonData = person,
+                ProductData = product
+            };
+
+            return View(personAndProductWrapperModel);
         }
     }
 }
