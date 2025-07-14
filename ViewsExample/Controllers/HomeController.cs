@@ -45,7 +45,7 @@ namespace ViewsExample.Controllers
         /// <returns>An <see cref="IActionResult"/> that renders a view displaying the details of the matching person. If no
         /// person matches the provided name, the view will display null.</returns>
 
-        [Route("home-person/{name}")]
+        [Route("person-details/{name}")]
         public IActionResult PersonDetails(string? name)
         {
 
@@ -75,6 +75,11 @@ namespace ViewsExample.Controllers
             Person? MatchingPerson = person.Where(p => p.Name == name).FirstOrDefault();
 
             return View(MatchingPerson);
+        }
+        [Route("/Person-with-product")]
+        public IActionResult PersonWithProduct()
+        {
+            return View();
         }
     }
 }

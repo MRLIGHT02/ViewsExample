@@ -19,7 +19,7 @@
  <div class="page-content">
 
         <h1>
-        Welcome to My Page
+       Persons 
         
     </h1>
     @* @Html.Raw(alertMessage); *@
@@ -47,9 +47,20 @@
 
         <td>@person.DateOfBirth.Value.ToString("dd/MM/yyy")</td>
                             }
-    </tr>
+    
+                        </tr>
+    
                     </tbody>
 </table>
+<div>
+
+<a href="/person-details/@person.Name">Go To Person Page</a>
+</div>
+              
+                <div>
+                <a href="/Person-with-product">Person With Product</a>
+
+                </div>
         </div>
     }
 
